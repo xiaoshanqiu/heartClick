@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="utf-8">  
+    <title>vue点击切换显示隐藏</title>  
+    <script src="vue.js"></script>
+  <style>
+    span{
+      display: block;
+      font-size: 30px;
+      color: #ddd;
+    }
+    .show{
+      color:red;
+    }
+  </style>
+
+</head>  
+<body>  
+  <div id="example">  
+      <span @click="showToggle" :class="{show:isShow}">❤</span>
+      <p v-text="btnText"></p>  
+  </div>  
+<script type="text/javascript">  
+  new Vue({  
+    el:"#example",  
+    data:{  
+        btnText:"收藏",  
+        isShow:false  
+    },  
+    methods:{  
+      showToggle:function(){  
+        this.isShow = !this.isShow  
+        if(this.isShow){  
+            this.btnText = "已收藏"  
+        }else{  
+            this.btnText = "收藏"  
+        }  
+      }  
+    }  
+  })  
+</script>  
+</body>  
+</html>   
